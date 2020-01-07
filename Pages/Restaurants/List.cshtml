@@ -1,0 +1,45 @@
+﻿@page
+@model HymneALaBouffe.Pages.Restaurants.ListModel
+@{
+}
+
+    <h1>Restaurants</h1>
+
+    <form method="get">
+        <div class="form-group">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Search" asp-for="SearchTerm" />
+                <span class="input-group-btn">
+                    <button class="btn btn-lg">
+                        <i class="fas fa-search" style="font-size:26px"></i>
+                    </button>
+                </span>
+            </div>
+
+        </div>
+    </form>
+
+    <table class="table">
+        @foreach(var restaurant in Model.Restaurants)
+        {
+            <tr>
+                <td>@restaurant.Name</td>
+                <td>@restaurant.Location</td>
+                <td>@restaurant.Cuisine</td>
+                <td>
+                    <a class="btn btn-lg"
+                       asp-page="./Detail"
+                       asp-route-restaurantId="@restaurant.Id">
+                        <i class="fas fa-search-plus" style="font-size:24px"></i>
+                    </a>
+                    <a class="btn btn-lg"
+                       asp-page="./Edit"
+                       asp-route-restaurantId="@restaurant.Id">
+                        <i class="fas fa-edit" style="font-size:24px"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+
+@Model.Message

@@ -1,0 +1,15 @@
+﻿@page "{restaurantId:int}"
+@model HymneALaBouffe.Pages.Restaurants.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editing @Model.Restaurant.Name</h1>
+
+<form method="post">
+
+    <input type="hidden" value="" />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
