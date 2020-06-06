@@ -31,7 +31,7 @@ namespace HymneALaBouffe.Pages.Restaurants
         {
             
             Message = config["Message"];
-            Restaurants = restaurantData.GetRestaurantByName(SearchTerm);
+            Restaurants = restaurantData.GetRestaurantsByName(SearchTerm);
         }
     }
 }
